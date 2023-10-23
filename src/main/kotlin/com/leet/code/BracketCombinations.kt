@@ -2,19 +2,13 @@ package com.leet.code
 
 class BracketCombinations {
     fun bracketCombinations(num: Int): Int {
-        var factOne = 1
-        var factTwo = 1
-        var factThree = 1
-        // code goes here
-        for (i in num * 2 downTo 1) factOne *= i
-        for (i in num + 1 downTo 1) factTwo *= i
-        for (i in num downTo 1) factThree *= i
-
-        return factOne / (factTwo * factThree)
+        var result = 1
+        for (i in 1 until num)  result = 2 * (2 * i + 1) * result / (i + 2)
+        return  result
     }
 }
 
 
 fun main() {
-    BracketCombinations().bracketCombinations(3)
+    BracketCombinations().bracketCombinations(4)
 }
