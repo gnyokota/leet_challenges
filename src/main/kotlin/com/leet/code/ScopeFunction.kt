@@ -5,6 +5,7 @@ data class Student(var firstName: String, var lastName: String)
 fun main() {
     val str = "hello"
     //this scope
+    //run works as with but as an extension func
     str.run {
         println("The string has length $length")
     }
@@ -24,9 +25,9 @@ fun main() {
     println("Student: $student")
 
     val numbersEven = mutableListOf(2, 4, 6,8)
-    with(numbers){
+    with( numbersEven){
         println("The lengh of the list is $size")
-        val sum = numbers.sum()
+        val sum =  numbersEven.sum()
         println("The sum of the list is: $sum")
     }
 }
