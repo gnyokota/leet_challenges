@@ -14,5 +14,5 @@ class GetRow {
 }
 
 fun main(){
-    val getRow = GetRow().getRow(3);
+    val getRow = println(GetRow().getRow(3));
 }
