@@ -2,14 +2,14 @@ package com.leet.code
 
 class makeValley {
     fun makeValley(arr: IntArray): IntArray {
-        var L = mutableListOf<Int>()
-        var R = mutableListOf<Int>()
+        var left = mutableListOf<Int>()
+        var right = mutableListOf<Int>()
         var side = false
         arr.sortedDescending().forEach {
-            if (side) R.add(it) else L.add(it)
+            if (side) right.add(it) else left.add(it)
             side = !side
         }
-        val valley = L + R.reversed()
+        val valley = left + right.reversed()
         return valley.toIntArray()
     }
 }
